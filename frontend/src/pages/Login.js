@@ -35,12 +35,12 @@ export default function Login() {
     if (Object.keys(clientValidationsErrors).length === 0) {
       try {
         const response = await axios.post(
-          "http://localhost:3010/api/users/login",
+          "https://role-based-management-task.onrender.com/api/users/login",
           formData
         );
         localStorage.setItem("token", response.data.token);
         const userResponse = await axios.get(
-          "http://localhost:3010/api/users/account",
+          "https://role-based-management-task.onrender.com/api/users/account",
           { headers: { Authorization: localStorage.getItem("token") } }
         );
         handleLogin(userResponse.data);

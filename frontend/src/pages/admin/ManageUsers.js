@@ -11,7 +11,7 @@ const ManageUsers = () => {
     const fetchUsers = async () => {
       try {
         setIsLoading(true);
-        const respose = await axios.get("http://localhost:3010/api/users", {
+        const respose = await axios.get("https://role-based-management-task.onrender.com/api/users", {
           headers: { Authorization: localStorage.getItem("token") },
         });
         console.log(respose.data);
@@ -30,7 +30,7 @@ const ManageUsers = () => {
     const toggleUser = currenUser.status === "active" ? "diactive" : "active";
     try {
       const response = await axios.put(
-        `http://localhost:3010/api/users/${id}/status`,
+        `https://role-based-management-task.onrender.com/api/users/${id}/status`,
         { status: toggleUser },
         { headers: { Authorization: localStorage.getItem("token") } }
       );

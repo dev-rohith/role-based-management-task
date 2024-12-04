@@ -24,7 +24,7 @@ function AuthProvider(props) {
     (async () => {
       if (localStorage.getItem("token")) {
         const response = await axios.get(
-          "http://localhost:3010/api/users/account",
+          "https://role-based-management-task.onrender.com/api/users/account",
           { headers: { Authorization: localStorage.getItem("token") } }
         );
         handleLogin(response.data);

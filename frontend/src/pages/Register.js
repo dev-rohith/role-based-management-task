@@ -37,7 +37,7 @@ export default function Register(){
         console.log(clientValidationsErrors); 
         if(Object.keys(clientValidationsErrors).length === 0) {
             try {
-                const response = await axios.post('http://localhost:3010/api/users/register', formData) 
+                const response = await axios.post('https://role-based-management-task.onrender.com/api/users/register', formData) 
                 navigate('/login'); 
             } catch(err) {
                 setServerErrors(err.response.data.errors); 
