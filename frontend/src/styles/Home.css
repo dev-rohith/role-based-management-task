@@ -1,0 +1,111 @@
+.landing-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: #fff;
+ }
+ 
+ header {
+    padding: 2rem;
+    text-align: center;
+    animation: slideDown 1s ease;
+    background: rgba(44, 62, 80, 0.9);
+ }
+ 
+ header h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+ }
+ 
+ .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+ }
+ 
+ .animated-card {
+    background: rgba(142, 68, 173, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    animation: floatAnimation 3s infinite ease-in-out;
+    color: #fff;
+ }
+ 
+ .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+ }
+ 
+ .feature {
+    background: rgba(155, 89, 182, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s;
+ }
+ 
+ .feature:hover {
+    transform: translateY(-10px);
+    background: rgba(142, 68, 173, 0.95);
+ }
+ 
+ footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(44, 62, 80, 0.9);
+    color: #fff;
+    animation: fadeIn 1s ease;
+ }
+ 
+ @keyframes slideDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+ }
+ 
+ @keyframes floatAnimation {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+ }
+ 
+ @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+ }
+ 
+ .bounce-in {
+    animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+ 
+ .bounce-in-delay-1 {
+    animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
+ }
+ 
+ .bounce-in-delay-2 {
+    animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+ }
+ 
+ @keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+ }
+ 
+ @media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+ }
